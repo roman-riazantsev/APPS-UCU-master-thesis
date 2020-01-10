@@ -1,0 +1,57 @@
+\chapter{Introduction}
+
+\minitoc
+
+\section{Context}
+Today virtual and augmented reality technologies (AR/VR) are becoming more and more popular. Prominent mobile applications like Snapchat or the Pokemon Go reflect that. Such a trend creates a high demand for 3D image data processing, which applies to many areas. 
+
+Samsung, in August 2019, released an application called '3D Scanner' that allows users to scan objects and create their 3D model, which then can be shared with others. For such a program, it is convenient to use algorithms based on data from a depth camera. However, algorithms based on the use of depth data cannot be easily applied to a vast amount of 2D data recorded using RGB sensors. And despite the growing availability of depth cameras and the information obtained from them, 2D data and RGB sensors themselves are still more accessible. We propose methods that can be used for a similar kind of 3D modeling applications. 
+
+\section{Problem}
+Sign language dictionaries are widely available but lack the methods for their conversion into 3D. There is plenty of single images as well as video sequences in 2D. Even though there is a cases of dictionaries recorded from multiple views, often people who want to learn sign language see only the front view of the hands. However, views from all angles carry value, as they reflect the nuances between similar words. Besides that, existing dictionaries don't unify into one universal solution. We don't observe a sequence of works dedicated to the reconstruction of existing sign language dictionaries in one unified 3D database. Our goal is to speed up research of 3D reconstructions of available sign language lessons for further usage in AR/VR applications. 
+
+We need to cover the processing of both sequences and single images to make future reconstruction into 3D video dictionaries more flexible. Working with video implies computational problems related to blurred frames which exist due to high speed of movement, and complex hand poses with overlapping hand parts along the z-axis.
+
+Besides that, sign language is a very broad field. As an initial step, we decided to create 3D annotations for the fingerspelling. Fingerspelling is a process of showing words by letters, which often used to show titles, people's names, brands, etc. 
+
+To analyze the nuances of video hand pose reconstruction and engineer solution American Sign Language we set research questions and engineering goals.
+
+\vbox{%
+\begin{description}
+    \item[Research questions]
+\end{description}
+\begin{itemize}
+\item How addition of synthetic video frames affect performance of 3D reconstruction methods.
+\item How refinement of results affects performance of 3D reconstruction methods.
+\end{itemize}
+\begin{description}
+    \item[Engineering goal]
+\end{description}
+\begin{itemize}
+\item Crate system for annotation of American Sign Language subset.
+\end{itemize}
+\begin{description}
+    \item[Contributions]
+\end{description}
+\begin{itemize}
+\item We researched how additional input data to influence 3D keypoint estimation.
+\item We researched how additional supervision reflects on 3D keypoint estimation results.
+\item We used RNN to parameterize hand shape. We didn't find mentions of this approach in literature.
+\item We designed a modular system for training and evaluation of hand pose reconstruction.
+\end{itemize}}
+
+
+\section{Descriptions of the thesis chapters}
+
+In \textbf{chapter 2}, we review the main technical concepts on which based techniques for 3D hand pose reconstruction. The chapter also provides an overview of existing end-to-end systems for hand. 
+
+In \textbf{chapter 3}, we propose our solution for hand pose estimation. And discuss differences between architectures that can be used for intermediate computations of key points in 2D and 3D. We are also covering datasets suitable for the training and evaluation of our algorithm.
+% The different datasets can be used for training and testing of hand pose reconstruction models.  There are many datasets with depth-camera input and 3D key points[1]–[8], somewhat less datasets with 3D points and single RGB camera [9]–[14]. Unfortunately, there are no 3D labeled video datasets or 3D labeled gesture dictionaries.  To solve this problem, we propose a method for simulation of video sequences of sign language from existing datasets.
+
+In \textbf{chapter 4}, we show training results and discuss how differences in architectures influence performance. This chapter also showcases performance on the American Sign Language dataset.
+
+In \textbf{chapter 5}, we are summing up research outcomes and discussing how the system for sing language reconstruction can be improved. 
+
+
+
+\endinput

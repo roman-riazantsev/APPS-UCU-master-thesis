@@ -1,0 +1,20 @@
+\chapter{Conclusion}
+
+Several architectures of neural networks were studied for the purpose of 3d hand shape reconstruction from video. It was shown that the addition of approximated hand positions at network input improves the quality of the final results. Also, it was observed that additional refinement of results is less efficient than the usage of extra annotated frames for both 2D key-point detection and depth estimation on all used datasets.
+
+Also, a modular method for 3D shape estimation was introduced \cite{sys}. The method differs from the nearest known analog by RNN, which maps detected key-points to space of shape parameters. Method can be iteratively improved by making changes to certain parts and be adapted for 3D reconstruction from both photo and video sign language dictionaries. Implementation can be changed by the integration of architecture for a particular stage.
+
+The selection of architecture for each stage heavily influences the quality of the reconstructed 3D hand shape. Although modular methods suffer from error accumulation, integration of networks that refine output from previous layers can help to overcome such performance degradation.
+
+\vbox{%
+\begin{description}
+    \item[Achievements]
+\end{description}
+\begin{itemize}
+\item Thesis introduces a method for hand shape parametrization.
+\item Complete 3D hand shape reconstruction method from video sequences was developed, and its performance was studied with different ANN architectures based on UNET, STH, and introduced RNN.
+\end{itemize}}
+
+\section{Future work}
+
+The next logical step would be to retrain the system on multiple datasets with data augmentation. After that, it needs to be compared with state of the art methods. Also, currently, the model does not distinguish between left and right hands and can not perform simultaneous detection of left and right hand. The integration of Part Affinity Fields can solve the limitation of single-hand detection \cite{PCP}.
